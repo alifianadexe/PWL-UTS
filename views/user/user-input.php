@@ -13,6 +13,24 @@
                 <div class="card-header">
                     User
                 </div>
+                <?php
+                $pass = strip_tags($_POST['pass']);
+
+                $row = $koneksi->prepare('SELECT * FROM user WHERE nama = ? AND password = md5(?)');
+                $row->execute(array($user, $pass));
+                $count = $row->rowCount();
+                if ($count > 0) {
+                    // buat sesi 
+                    session_start();
+
+                    $result = $row->fetch();
+                    $_SESSION['ADMIN'] = $result;
+                    // status yang diberikan 
+                    echo "<script>window.location='index.php';</script>";
+                }
+
+
+                ?>
                 <div class="card-body">
                     <form action="proses/crud.php?aksi_user=edit" method="POST">
                         <div class="form-group">

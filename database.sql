@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 02:39 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Apr 19, 2022 at 03:46 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,6 +35,14 @@ CREATE TABLE `barang` (
   `jml_stok` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`kode_barang`, `nama`, `harga`, `gambar`, `jml_stok`) VALUES
+(1, 'Telur', 25000, '', 20),
+(2, 'Margarin', 100000, '', 20);
+
 -- --------------------------------------------------------
 
 --
@@ -56,8 +63,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`kode_user`, `nama`, `email`, `telp`, `password`, `peran`) VALUES
-(1, 'admin', 'airdrop.adexe@gmail.com', '01982301212', '21232f297a57a5a743894a0e4a801fc3 ', 'admin'),
-(2, 'user', 'airdrop.adexe@gmail.com', '1028319283918', 'ee11cbb19052e40b07aac0ca060c23ee ', 'user');
+(1, 'admin', 'alifianadexe@gmail.com', '01982301212', '21232f297a57a5a743894a0e4a801fc3 ', 'admin'),
+(2, 'user', 'mandragarin@gmail.com', '1028319283918', 'ee11cbb19052e40b07aac0ca060c23ee ', 'user');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +90,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `kode_barang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`

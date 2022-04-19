@@ -52,3 +52,7 @@ if (!empty($_GET['aksi'] == 'delete_barang')) {
 if (!empty($_GET['aksi'] == 'barang_input')) {
     echo "<script>window.location='index.php?hal=barang&file=barang-input';</script>";
 }
+
+if (!empty($_GET['aksi'] == 'user_input')) {
+    echo "<script>window.location='index.php?hal=user&file=user-input';</script>";
+}
